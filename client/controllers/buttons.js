@@ -2,7 +2,7 @@ Session.set("addPushed",false);
 Session.set("subPushed",false);
 Session.set("multiPushed", false);
 Session.set("divPushed", false);
-Session.set("moduloPushed", false);
+Session.set("modPushed", false);
 
 blankAllFunction = function(){
   Session.set("temp1","");
@@ -10,6 +10,7 @@ blankAllFunction = function(){
   Session.set("subPushed",false);
   Session.set("multiPushed",false);
   Session.set("divPushed",false);
+  Session.set("modPushed",false);
 };
 
 addFunction = function(temp1,temp2){
@@ -44,6 +45,13 @@ dividFunction = function(temp1, temp2){
   parseFloat(temp2);
   temp2 = temp1/temp2;
   return temp2;
+};
+
+modFunction = function(temp1,temp2){
+  parseFloat(temp1);
+  parseFloat(temp2);
+  temp = temp1 % temp2;
+  return temp;
 };
 
 blankResult = function(){
@@ -167,6 +175,21 @@ Template.buttons.events({
     console.log("temp1: " + Session.get("temp1"));
   },
 
+"click #btnMod":function(){
+
+    if(Session.get("modPushed"))
+    {
+      Session.set("temp1", modFunction(Session.get("temp1"),Session.get("result")));
+      Session.set("result","");
+      Session.set("modPushed",true);
+      return;
+    }
+
+    Session.set("temp1",Session.get("result"));
+    Session.set("modPushed",true);
+    Session.set("result","");
+  },
+
   "click #btnDiv": function(){
 
     if(Session.get("divPushed"))
@@ -200,8 +223,13 @@ Template.buttons.events({
     Session.set("result", dividFunction(Session.get("temp1"),Session.get("result")));
     blankAllFunction();
   }
-  else{
-    alert("TEST");
+  else if(Session.get("modPushed"))
+  {
+    Session.set("result", modFunction(Session.get("temp1"),Session.get("result")));
+    blankAllFunction();
+  }
+  else {
+    alert("test");
   }
 
 }
