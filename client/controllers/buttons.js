@@ -73,7 +73,8 @@ blankResult = function(){
 
   Template.buttons.events({
 
-    "click #btn9": function(){  Session.set("result",Session.get("result") + "9");
+    "click #btn9": function(){
+      Session.set("result",Session.get("result") + "9");
     },
 
     "click #btn8": function(){
@@ -168,7 +169,8 @@ Template.buttons.events({
 
   "click #btnDiv": function(){
 
-    if(Session.get("divPushed")){
+    if(Session.get("divPushed"))
+    {
       Session.set("temp1", dividFunction(Session.get("temp1"), Session.get("result")));
       Session.set("result", "");
       Session.set("divPushed", true);
@@ -191,6 +193,11 @@ Template.buttons.events({
   else if(Session.get("subPushed"))
   {
     Session.set("result", subFunction(Session.get("temp1"),Session.get("result")));
+    blankAllFunction();
+  }
+  else if(Session.get("divPushed"))
+  {
+    Session.set("result", dividFunction(Session.get("temp1"),Session.get("result")));
     blankAllFunction();
   }
   else{
