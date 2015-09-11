@@ -228,6 +228,11 @@ Template.buttons.events({
     Session.set("result", modFunction(Session.get("temp1"),Session.get("result")));
     blankAllFunction();
   }
+  else if(Session.get("multiPushed"))
+  {
+    Session.set("result",multiplyFunction(Session.get("temp1"),Session.get("result")));
+    blankAllFunction();
+  }
   else {
     alert("test");
   }
