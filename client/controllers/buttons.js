@@ -1,0 +1,164 @@
+Session.set("addPushed",false);
+Session.set("subPushed",false);
+
+blankAllFunction = function(){
+  Session.set("temp1","");
+  Session.set("addPushed",false);
+  Session.set("subPushed",false);
+  Session.set("multiPushed",false);
+  Session.set("divPushed",false);
+};
+
+addFunction = function(temp1,temp2){
+  temp1 = parseFloat(temp1);
+  console.log(temp1 + " temp1 i add");
+  temp2 = parseFloat(temp2);
+  console.log(temp2 + " temp2 i add");
+  temp1 = (temp1 + temp2);
+  console.log(temp1 + " temp1 i add total");
+  return temp1;
+};
+
+subFunction = function(temp1,temp2){
+  temp1 = parseFloat(temp1);
+  console.log(temp1 + " temp1 i sub");
+  temp2 = parseFloat(temp2);
+  console.log(temp2 + " temp2 i sub");
+  temp1 = (temp1-temp2);
+  console.log(temp1 + "temp1 i sub total");
+  return temp1;
+};
+
+blankResult = function(){
+  Session.set("result","");
+};
+
+  Template.buttons.helpers({
+    "btn9" : function() {return Session.get("btn9");},
+    "btn8" : function() {return Session.get("btn8");},
+    "btn7" : function() {return Session.get("btn7");},
+    "btnMod" : function() {return Session.get("btnMod");},
+    "btn6" : function() {return Session.get("btn6");},
+    "btn5" : function() {return Session.get("btn5");},
+    "btn4" : function() {return Session.get("btn4");},
+    "btnMulti" : function() {return Session.get("btnMulti");},
+    "btn3" : function() {return Session.get("btn3");},
+    "btn2" : function() {return Session.get("btn2");},
+    "btn1" : function() {return Session.get("btn1");},
+    "btnSub" : function() {return Session.get("btnSub");},
+    "btn0" : function() {return Session.get("btn0");},
+    "btnCom" : function() {return Session.get("btnCom");},
+    "btnEqual" : function() {return Session.get("btnEqual");},
+    "btnAdd" : function() {return Session.get("btnAdd");},
+    "btnDiv" : function() {return Session.get("btnDiv");},
+    "btnBlank" : function() {return Session.get("btnBlank");},
+  });
+
+
+
+  Template.buttons.events({
+
+    "click #btn9": function(){
+      Session.set("result",Session.get("result") + "9");
+    },
+
+    "click #btn8": function(){
+      Session.set("result",Session.get("result") + "8");
+    },
+
+   "click #btn7": function(){
+      Session.set("result",Session.get("result") + "7");
+    },
+
+    "click #btn6": function(){
+      Session.set("result",Session.get("result") + "6");
+    },
+
+     "click #btn5": function(){
+      Session.set("result",Session.get("result") + "5");
+    },
+
+     "click #btn4": function(){
+      Session.set("result",Session.get("result") + "4");
+    },
+
+     "click #btn3": function(){
+      Session.set("result",Session.get("result") + "3");
+    },
+
+     "click #btn2": function(){
+      Session.set("result",Session.get("result") + "2");
+    },
+
+     "click #btn1": function(){
+      Session.set("result",Session.get("result") + "1");
+    },
+
+     "click #btn0": function(){
+      Session.set("result",Session.get("result") + "0");
+    },
+
+     "click #btnCom": function(){
+      Session.set("result",Session.get("result") + ".");
+    },
+
+    "click #btnMulti":function(){
+      addFunction("2","3");
+    }
+
+
+  }); // end of events
+
+
+Template.buttons.events({
+"click #btnAdd": function(event,template){
+
+  if(Session.get("addPushed"))
+  {
+    Session.set("temp1", addFunction(Session.get("temp1"),Session.get("result")));
+    Session.set("result","");
+    Session.set("addPushed",true);
+    return;
+  }
+  Session.set("temp1",Session.get("result"));
+  Session.set("addPushed",true);
+  Session.set("result","");
+
+},
+
+
+"click #btnSub":function(){
+
+  if(Session.get("subPushed"))
+  {
+    Session.set("temp1", subFunction(Session.get("temp1"),Session.get("result")));
+    Session.set("result","");
+    Session.set("subPushed",true);
+    return;
+  }
+
+  Session.set("temp1",Session.get("result"));
+  Session.set("subPushed",true);
+  Session.set("result","");
+
+},
+
+"click #btnEqual": function(){
+
+  if(Session.get("addPushed"))
+  {
+    Session.set("result", addFunction(Session.get("temp1"),Session.get("result")));
+    blankAllFunction();
+  }
+  else if(Session.get("subPushed"))
+  {
+    Session.set("result", subFunction(Session.get("temp1"),Session.get("result")));
+    blankAllFunction();
+  }
+  else{
+    alert("TEST");
+  }
+
+}
+
+});
