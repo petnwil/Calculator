@@ -1,5 +1,8 @@
 Session.set("addPushed",false);
 Session.set("subPushed",false);
+Session.set("multiPushed", false);
+Session.set("divPushed", false);
+Session.set("moduloPushed", false);
 
 blankAllFunction = function(){
   Session.set("temp1","");
@@ -36,6 +39,12 @@ multiplyFunction = function(temp1, temp2){
   return temp2;
 };
 
+dividFunction = function(temp1, temp2){
+  parseFloat(temp1);
+  parseFloat(temp2);
+  temp2 = temp1/temp2;
+  return temp2;
+};
 
 blankResult = function(){
   Session.set("result","");
@@ -62,12 +71,9 @@ blankResult = function(){
     "btnBlank" : function() {return Session.get("btnBlank");},
   });
 
-
-
   Template.buttons.events({
 
-    "click #btn9": function(){
-      Session.set("result",Session.get("result") + "9");
+    "click #btn9": function(){  Session.set("result",Session.get("result") + "9");
     },
 
     "click #btn8": function(){
@@ -110,11 +116,6 @@ blankResult = function(){
       Session.set("result",Session.get("result") + ".");
     },
 
-    "click #btnMulti":function(){
-      addFunction("2","3");
-    }
-
-
   }); // end of events
 
 
@@ -131,7 +132,6 @@ Template.buttons.events({
   Session.set("temp1",Session.get("result"));
   Session.set("addPushed",true);
   Session.set("result","");
-
 },
 
 
@@ -164,9 +164,21 @@ Template.buttons.events({
     Session.set("multiPushed", true);
     Session.set("result", "");
     console.log("temp1: " + Session.get("temp1"));
+  },
 
+  "click #btnDiv": function(){
 
-
+    if(Session.get("divPushed")){
+      Session.set("temp1", dividFunction(Session.get("temp1"), Session.get("result")));
+      Session.set("result", "");
+      Session.set("divPushed", true);
+      console.log("temp1 divison: " + Session.get("temp1"));
+      return;
+    }
+    Session.set("temp1", Session.get("result"));
+    Session.set("divPushed", true);
+    Session.set("result", "");
+    console.log("temp1: " + Session.get("temp1"));
   },
 
 "click #btnEqual": function(){
