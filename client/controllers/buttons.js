@@ -29,6 +29,14 @@ subFunction = function(temp1,temp2){
   return temp1;
 };
 
+multiplyFunction = function(temp1, temp2){
+  parseFloat(temp1);
+  parseFloat(temp2);
+  temp2 = temp1*temp2;
+  return temp2;
+};
+
+
 blankResult = function(){
   Session.set("result","");
 };
@@ -142,6 +150,24 @@ Template.buttons.events({
   Session.set("result","");
 
 },
+
+"click #btnMulti": function(){
+
+    if(Session.get("multiPushed")){
+      Session.set("temp1", multiplyFunction(Session.get("temp1"), Session.get("result")));
+      Session.set("result", "");
+      Session.set("multiPushed", true);
+      console.log("temp1 funksjonen: " + Session.get("temp1"));
+      return;
+    }
+    Session.set("temp1", Session.get("result"));
+    Session.set("multiPushed", true);
+    Session.set("result", "");
+    console.log("temp1: " + Session.get("temp1"));
+
+
+
+  },
 
 "click #btnEqual": function(){
 
