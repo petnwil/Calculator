@@ -11,7 +11,8 @@
 
     Template.functionButtons.events({
         "click #btnDel": function(){
-            console.log("Delte");
+            console.log("Delete");
+            //Session.set("result","");
         },
         "click #btnHistory": function(){
             console.log("HISTORY");

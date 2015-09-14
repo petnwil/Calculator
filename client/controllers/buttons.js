@@ -146,17 +146,24 @@ Template.buttons.events({
 
 "click #btnSub":function(){
 
-  if(Session.get("subPushed"))
+  if(Session.get("result") === "")
   {
-    Session.set("temp1", subFunction(Session.get("temp1"),Session.get("result")));
-    Session.set("result","");
-    Session.set("subPushed",true);
-    return;
+    Session.set("result","-");
   }
+  else
+  {
+    if(Session.get("subPushed"))
+    {
+      Session.set("temp1", subFunction(Session.get("temp1"),Session.get("result")));
+      Session.set("result","");
+      Session.set("subPushed",true);
+      return;
+    }
 
-  Session.set("temp1",Session.get("result"));
-  Session.set("subPushed",true);
-  Session.set("result","");
+    Session.set("temp1",Session.get("result"));
+    Session.set("subPushed",true);
+    Session.set("result","");
+  }
 
 },
 
