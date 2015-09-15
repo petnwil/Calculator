@@ -12,7 +12,7 @@
     Template.functionButtons.events({
         "click #btnDel": function(){
             console.log("Delete");
-            //Session.set("result","");
+            Session.set("result","");
         },
         "click #btnHistory": function(){
             console.log("HISTORY");
