@@ -15,6 +15,9 @@
   Session.set("btnCom","btn-default");
   Session.set("btnEqual","btn-default");
   Session.set("btnAdd","btn-default");
-  Session.set("btnBlank","btn-default");
+  Session.set("btnPower","btn-default");
+  Session.set("btnSqr", "btn-default");
+  Session.set("btnToBin","btn-default");
+
   Session.set("result","");
   Session.set("tempAdd","");
