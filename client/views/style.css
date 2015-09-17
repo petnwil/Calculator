@@ -3,9 +3,9 @@
 
 #colDisplay{
     height: 100px;
-    font-size:65px;
+    font-size:45px;
     text-align: right;
-    padding-right: 5%;
+    padding-right: %;
     padding-top: 1%;
     background-color: #282C34;
     color: #98C379;
@@ -23,14 +23,16 @@
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     background-color: #E1E6E2;
-    padding: 5%;
+    /*padding: 5%;*/
 }
 
 #btn9,#btn8,#btn7,#btn6,#btn5,#btn4,#btn3,#btn2,#btn1,#btn0,
-#btnDiv,#btnMulti,#btnSub,#btnCom,#btnEqual,#btnAdd{
-  margin: 2%;
+#btnDiv,#btnMulti,#btnSub,#btnCom,#btnEqual,#btnAdd,#btnBlank, #btnMod,
+#btnPower, #btnSqr, #btnToBin{
+  margin: 1px;
   background-color: #282C34;
-  color: #98C379
-
+  color: #98C379;
+  width: 50px;
+  height: 50px;
 
 }
