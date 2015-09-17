@@ -3,6 +3,8 @@ Session.set("subPushed",false);
 Session.set("multiPushed", false);
 Session.set("divPushed", false);
 Session.set("modPushed", false);
+Session.set("powerPushed",false);
+Session.set("sqrPushed",false); //do we need this??
 
 blankAllFunction = function(){
   Session.set("temp1","");
@@ -11,6 +13,8 @@ blankAllFunction = function(){
   Session.set("multiPushed",false);
   Session.set("divPushed",false);
   Session.set("modPushed",false);
+  Session.set("powerPushed",false);
+  Session.set("sqrPushed",false); //do we need this??
 };
 
 addFunction = function(temp1,temp2){
@@ -20,7 +24,7 @@ addFunction = function(temp1,temp2){
   console.log(temp2 + " temp2 i add");
   temp1 = (temp1 + temp2);
   console.log(temp1 + " temp1 i add total");
-  return temp1;
+  return temp1.toFixed(4);
 };
 
 subFunction = function(temp1,temp2){
@@ -30,30 +34,52 @@ subFunction = function(temp1,temp2){
   console.log(temp2 + " temp2 i sub");
   temp1 = (temp1-temp2);
   console.log(temp1 + "temp1 i sub total");
-  return temp1;
+  return temp1.toFixed(4);
 };
 
 multiplyFunction = function(temp1, temp2){
   parseFloat(temp1);
   parseFloat(temp2);
   temp2 = temp1*temp2;
-  return temp2;
+  return temp2.toFixed(4);
 };
 
 dividFunction = function(temp1, temp2){
   parseFloat(temp1);
   parseFloat(temp2);
   temp2 = temp1/temp2;
-  return temp2;
+  return temp2.toFixed(4);
 };
 
 modFunction = function(temp1,temp2){
   parseFloat(temp1);
   parseFloat(temp2);
   temp = temp1 % temp2;
-  return temp;
+  return temp.toFixed(4);
 };
 
+powerofFunction = function(temp1,temp2){
+  parseFloat(temp1);
+  parseFloat(temp2);
+  temp = Math.pow(temp1,temp2);
+  return temp.toFixed(4);
+};
+
+sqrFunction = function(temp1){
+  parseFloat(temp1);
+  temp = Math.sqrt(temp1);
+  return temp.toFixed(4);
+};
+
+toBinaryFunction = function(temp1){
+  temp11 = parseInt(temp1);
+  temp22 = parseFloat(temp1);
+  console.log(temp11);
+  console.log(temp22);
+  return temp11.toString(2); //2 is the radix, the base of the input
+};
+
+//Is this in use??
 blankResult = function(){
   Session.set("result","");
 };
@@ -76,6 +102,8 @@ blankResult = function(){
     "btnEqual" : function() {return Session.get("btnEqual");},
     "btnAdd" : function() {return Session.get("btnAdd");},
     "btnDiv" : function() {return Session.get("btnDiv");},
+    "btnPower": function(){return Session.get("btnPower");},
+    "btnSqr": function(){return Session.get("btnSqr");},
     "btnBlank" : function() {return Session.get("btnBlank");},
   });
 
@@ -143,7 +171,6 @@ Template.buttons.events({
   Session.set("result","");
 },
 
-
 "click #btnSub":function(){
 
   if(Session.get("result") === "")
@@ -165,6 +192,10 @@ Template.buttons.events({
     Session.set("result","");
   }
 
+},
+
+"click #btnSqr":function(){
+  Session.set("result", sqrFunction(Session.get("result")));
 },
 
 "click #btnMulti": function(){
@@ -213,6 +244,27 @@ Template.buttons.events({
     console.log("temp1: " + Session.get("temp1"));
   },
 
+  "click #btnPower": function(){
+
+    if(Session.get("powerPushed"))
+    {
+      Session.set("temp1", powerofFunction(Session.get("temp1"), Session.get("result")));
+      Session.set("result","");
+      Session.set("powerPushed",true);
+      console.log("temp1 i power etter utregning: " + Session.get("temp1"));
+      return;
+    }
+
+    Session.set("temp1", Session.get("result"));
+    Session.set("powerPushed",true);
+    Session.set("result","");
+    console.log("temp1 i power: " + Session.get("temp1"));
+  },
+
+"click #btnToBin":function(){
+  Session.set("result",toBinaryFunction(Session.get("result")));
+},
+
 "click #btnEqual": function(){
 
   if(Session.get("addPushed"))
@@ -238,6 +290,11 @@ Template.buttons.events({
   else if(Session.get("multiPushed"))
   {
     Session.set("result",multiplyFunction(Session.get("temp1"),Session.get("result")));
+    blankAllFunction();
+  }
+  else if(Session.get("powerPushed"))
+  {
+    Session.set("result", powerofFunction(Session.get("temp1"),Session.get("result")));
     blankAllFunction();
   }
   else {
