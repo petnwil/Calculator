@@ -1,7 +1,7 @@
 
-    Session.set("btnDel", "btn-danger");
-    Session.set("btnHistory", "btn-info");
-    Session.set("btnOn", "btn-success");
+    Session.set("btnDel", "btn-default");
+    Session.set("btnHistory", "btn-default");
+    Session.set("btnOn", "btn-default");
 
     Template.functionButtons.helpers({
         "btnDel" : function(){return Session.get("btnDel");},

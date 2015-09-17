@@ -23,6 +23,7 @@
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     background-color: #E1E6E2;
+    
     /*padding: 5%;*/
 }
 
@@ -34,5 +35,28 @@
   color: #98C379;
   width: 50px;
   height: 50px;
+  box-shadow: 3px 3px 1px #888888;
+
+}
+#btnOn{
+  margin-top: 75%;
+  background-color: #98C379;
+}
+#btnDel{
+  background-color: #E06C75;
+
+}
+#btnHistory{
+  background-color: #5DAFEF;
+}
+#btnOn,#btnDel,#btnHistory{
+  width: 140px;
+  height: 40px;
+  color: #282C34;
+  margin-bottom: 17%;
+  font-size: 16px;
+  font-weight: bold;
+  border: solid black 1px;
+  box-shadow: 3px 3px 1px #888888;
 
 }
