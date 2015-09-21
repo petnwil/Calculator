@@ -14,22 +14,21 @@
   <div class="container">
 
     <div class="row">
-      <div class="col-md-8 " id="colDisplay">
+      <div class=" col-xs-12 col-md-8 col-lg-10" id="colDisplay">
         {{ >display }}
       </div>
     </div>
 
-    <div class="row" >
-      <div class="col-md-4">
-        {{ >buttons }}
-      </div>
-      <div class="col-md-2" >
-        {{>functionButtons }}
-      </div>
-      <div class="col-md-2">
-        {{ >history}}
-      </div>
+<div class="col-md-8">
+  <div class="row" >
+    <div class="col-xs-8 col-md-6 col-lg-11  ">
+      {{ >buttons }}
     </div>
+    <div class="col-xs-4 col-md-2 col-lg-1">
+      {{>functionButtons }}
+    </div>
+  </div>
+</div>
 
 
   </div>
