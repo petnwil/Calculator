@@ -270,6 +270,8 @@ Template.buttons.events({
   if(Session.get("addPushed"))
   {
     Session.set("result", addFunction(Session.get("temp1"),Session.get("result")));
+    var result = Session.get("result");
+    history.insert({Result:result});
     blankAllFunction();
   }
   else if(Session.get("subPushed"))
