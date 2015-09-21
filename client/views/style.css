@@ -54,3 +54,13 @@
   border: solid black 1px;
   box-shadow: 3px 3px 1px #888888;
 }
+
+.modal-header{
+  background-color: #282C34 ;
+  color:#98C379;
+}
+
+.modal-body{
+  background-color: #E1E6E2;;
+  color:#98C379;
+}
