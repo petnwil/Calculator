@@ -24,7 +24,7 @@ addFunction = function(temp1,temp2){
   console.log(temp2 + " temp2 i add");
   temp1 = (temp1 + temp2);
   console.log(temp1 + " temp1 i add total");
-  return temp1.toFixed(4);
+  return temp1.toFixed(2);
 };
 
 subFunction = function(temp1,temp2){
@@ -34,49 +34,49 @@ subFunction = function(temp1,temp2){
   console.log(temp2 + " temp2 i sub");
   temp1 = (temp1-temp2);
   console.log(temp1 + "temp1 i sub total");
-  return temp1.toFixed(4);
+  return temp1.toFixed(2);
 };
 
 multiplyFunction = function(temp1, temp2){
   parseFloat(temp1);
   parseFloat(temp2);
   temp2 = temp1*temp2;
-  return temp2.toFixed(4);
+  return temp2.toFixed(2);
 };
 
 dividFunction = function(temp1, temp2){
   parseFloat(temp1);
   parseFloat(temp2);
   temp2 = temp1/temp2;
-  return temp2.toFixed(4);
+  return temp2.toFixed(2);
 };
 
 modFunction = function(temp1,temp2){
   parseFloat(temp1);
   parseFloat(temp2);
   temp = temp1 % temp2;
-  return temp.toFixed(4);
+  return temp.toFixed(2);
 };
 
 powerofFunction = function(temp1,temp2){
   parseFloat(temp1);
   parseFloat(temp2);
   temp = Math.pow(temp1,temp2);
-  return temp.toFixed(4);
+  return temp.toFixed(2);
 };
 
 sqrFunction = function(temp1){
   parseFloat(temp1);
   temp = Math.sqrt(temp1);
-  return temp.toFixed(4);
+  return temp.toFixed(2);
 };
 
 toBinaryFunction = function(temp1){
   temp11 = parseInt(temp1);
-  temp22 = parseFloat(temp1);
+  //temp22 = parseFloat(temp1);
   console.log(temp11);
-  console.log(temp22);
-  return temp11.toString(2); //2 is the radix, the base of the input
+  //console.log(temp22);
+  return temp1.toString(2); //2 is the radix, the base of the input
 };
 
 //Is this in use??
