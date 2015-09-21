@@ -309,7 +309,7 @@ Template.buttons.events({
   "click #btnEqual": function(){
     var result = Session.get("result");
     console.log(result);
-     history.insert({Result: result});
+     historie.insert({Result: result});
      console.log("satt inn i database?");
   }
 });
