@@ -7,32 +7,30 @@
   <nav class="navbar-default">
     <div class="container-fluid">
       <a class="navbar-brand"> Calculator</a>
-      </div>
+    </div>
   </nav> <!--END NAVBAR-->
   <br>
-    <div class="container">
 
-        <div class="row">
-          <div class="col-md-5 col-sm-8" id="colDisplay">
-            {{ >display }}
-          </div>
-        </div>
+  <div class="container">
 
-        <div class="row" >
-          <div class="col-md-5 col-sm-8" id="rowButtons">
-            <div class="col-md-1 col-sm-1">
-
-            </div>
-              <div class="col-md-7 col-sm-7">
-                 {{ >buttons }}
-              </div>
-              <div class="col-md-2 col-sm-2">
-                 {{>functionButtons }}
-              </div>
-          </div>
-
-        </div>
-
+    <div class="row">
+      <div class="col-md-8 " id="colDisplay">
+        {{ >display }}
+      </div>
     </div>
 
+    <div class="row" >
+      <div class="col-md-4">
+        {{ >buttons }}
+      </div>
+      <div class="col-md-2" >
+        {{>functionButtons }}
+      </div>
+      <div class="col-md-2">
+        {{ >history}}
+      </div>
+    </div>
+
+
+  </div>
 </body>

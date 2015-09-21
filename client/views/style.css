@@ -3,27 +3,22 @@
 
 #colDisplay{
     height: 100px;
-    font-size:45px;
+    font-size: 3.5em;
     text-align: right;
-    padding-right: %;
     padding-top: 1%;
     background-color: #282C34;
     color: #98C379;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-
 }
 
-#name{
-  border: solid red;
-}
 
-#rowButtons{
+.rowButtons{
     border:solid #282C34 8px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     background-color: #E1E6E2;
-    
+
     /*padding: 5%;*/
 }
 
@@ -39,7 +34,6 @@
 
 }
 #btnOn{
-  margin-top: 75%;
   background-color: #98C379;
 }
 #btnDel{
@@ -49,14 +43,18 @@
 #btnHistory{
   background-color: #5DAFEF;
 }
+
+#functionButtons{
+  margin-top: 10px;
+}
 #btnOn,#btnDel,#btnHistory{
-  width: 140px;
-  height: 40px;
   color: #282C34;
-  margin-bottom: 17%;
   font-size: 16px;
   font-weight: bold;
   border: solid black 1px;
   box-shadow: 3px 3px 1px #888888;
+}
 
+#hei{
+  border: solid black;
 }
