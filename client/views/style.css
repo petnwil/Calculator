@@ -68,3 +68,14 @@
 #calcHistory{
   color: black;
 }
+
+
+#test1{
+  background-color: #F8F8F8;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 12%;
+  border-left: solid #282C34 7px;
+  border-right: solid #282C34 7px;
+  border-bottom: solid #282C34 7px;
+}
