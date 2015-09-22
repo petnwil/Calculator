@@ -6,7 +6,7 @@ Session.set("modPushed", false);
 Session.set("powerPushed",false);
 Session.set("sqrPushed",false); //do we need this??
 Session.set("equalPushed",false);
-
+counter = 0;
 
 blankAllFunction = function(){
   Session.set("temp1","");
@@ -269,6 +269,7 @@ Template.buttons.events({
 "click #btnEqual": function(){
 
   Session.set("equalPushed",true);
+  counter += 1;
 
   if(Session.get("addPushed"))
   {
@@ -312,7 +313,7 @@ Template.buttons.events({
   "click #btnEqual": function(){
     var result = Session.get("result");
     console.log(result);
-     historie.insert({Result: result});
+     historie.insert({Result: result, number: counter});
      console.log("satt inn i database?");
   }
 });
