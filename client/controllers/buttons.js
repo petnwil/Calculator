@@ -5,6 +5,8 @@ Session.set("divPushed", false);
 Session.set("modPushed", false);
 Session.set("powerPushed",false);
 Session.set("sqrPushed",false); //do we need this??
+Session.set("equalPushed",false);
+
 
 blankAllFunction = function(){
   Session.set("temp1","");
@@ -84,6 +86,16 @@ blankResult = function(){
   Session.set("result","");
 };
 
+
+function checkEqual(){
+  if(Session.get("equalPushed"))
+  {
+    Session.set("result", "");
+    Session.set("equalPushed", false);
+  }
+}
+
+
   Template.buttons.helpers({
     "btn9" : function() {return Session.get("btn9");},
     "btn8" : function() {return Session.get("btn8");},
@@ -109,49 +121,38 @@ blankResult = function(){
 
   Template.buttons.events({
 
-    "click #btn9": function(){
-      Session.set("result",Session.get("result") + "9");
-    },
+    "click #btn9": function(){ checkEqual();
+      Session.set("result",Session.get("result") + "9"); },
 
-    "click #btn8": function(){
-      Session.set("result",Session.get("result") + "8");
-    },
+    "click #btn8": function(){ checkEqual();
+      Session.set("result",Session.get("result") + "8"); },
 
-   "click #btn7": function(){
-      Session.set("result",Session.get("result") + "7");
-    },
+   "click #btn7": function(){ checkEqual();
+      Session.set("result",Session.get("result") + "7"); },
 
-    "click #btn6": function(){
-      Session.set("result",Session.get("result") + "6");
-    },
+    "click #btn6": function(){ checkEqual();
+      Session.set("result",Session.get("result") + "6"); },
 
-     "click #btn5": function(){
-      Session.set("result",Session.get("result") + "5");
-    },
+     "click #btn5": function(){ checkEqual();
+      Session.set("result",Session.get("result") + "5"); },
 
-     "click #btn4": function(){
-      Session.set("result",Session.get("result") + "4");
-    },
+     "click #btn4": function(){ checkEqual();
+      Session.set("result",Session.get("result") + "4"); },
 
-     "click #btn3": function(){
-      Session.set("result",Session.get("result") + "3");
-    },
+     "click #btn3": function(){ checkEqual();
+      Session.set("result",Session.get("result") + "3"); },
 
-     "click #btn2": function(){
-      Session.set("result",Session.get("result") + "2");
-    },
+     "click #btn2": function(){ checkEqual();
+      Session.set("result",Session.get("result") + "2"); },
 
-     "click #btn1": function(){
-      Session.set("result",Session.get("result") + "1");
-    },
+     "click #btn1": function(){ checkEqual();
+      Session.set("result",Session.get("result") + "1"); },
 
-     "click #btn0": function(){
-      Session.set("result",Session.get("result") + "0");
-    },
+     "click #btn0": function(){ checkEqual();
+      Session.set("result",Session.get("result") + "0"); },
 
-     "click #btnCom": function(){
-      Session.set("result",Session.get("result") + ".");
-    },
+     "click #btnCom": function(){ checkEqual();
+      Session.set("result",Session.get("result") + "."); },
 
   }); // end of events
 
@@ -266,6 +267,8 @@ Template.buttons.events({
 },
 
 "click #btnEqual": function(){
+
+  Session.set("equalPushed",true);
 
   if(Session.get("addPushed"))
   {
