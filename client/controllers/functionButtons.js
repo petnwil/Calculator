@@ -19,6 +19,8 @@
         },
         "click #btnOn": function(){
            console.log("BTNON");
+           blankAllFunction();
+           Session.set("result","");
         }
 
     });
