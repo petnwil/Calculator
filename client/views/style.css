@@ -15,6 +15,9 @@
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     background-color: #E1E6E2;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 12%;
 
     /*padding: 5%;*/
 }
@@ -36,10 +39,6 @@
 }
 #btnDel{
   background-color: #E06C75;
-
-}
-#btnHistory{
-  background-color: #5DAFEF;
 }
 
 #functionButtons{
@@ -69,13 +68,6 @@
   color: black;
 }
 
-
-#test1{
-  background-color: #F8F8F8;
-  padding-top: 5%;
-  padding-bottom: 5%;
-  padding-left: 12%;
-  border-left: solid #282C34 7px;
-  border-right: solid #282C34 7px;
-  border-bottom: solid #282C34 7px;
+#mid{
+  text-align: center;
 }
