@@ -14,9 +14,7 @@
             console.log("Delete");
             Session.set("result","");
         },
-        "click #btnHistory": function(){
-            console.log("HISTORY");
-        },
+
         "click #btnOn": function(){
            console.log("BTNON");
            blankAllFunction();

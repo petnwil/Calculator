@@ -74,18 +74,9 @@ sqrFunction = function(temp1){
 };
 
 toBinaryFunction = function(temp1){
-  temp11 = parseInt(temp1);
-  //temp22 = parseFloat(temp1);
-  console.log(temp11);
-  //console.log(temp22);
+  temp1 = parseInt(temp1);
   return temp1.toString(2); //2 is the radix, the base of the input
 };
-
-//Is this in use??
-blankResult = function(){
-  Session.set("result","");
-};
-
 
 function checkEqual(){
   if(Session.get("equalPushed"))
@@ -197,6 +188,8 @@ Template.buttons.events({
 
 "click #btnSqr":function(){
   Session.set("result", sqrFunction(Session.get("result")));
+  var result = Session.get("result");
+  historie.insert({Result: result, number: counter});
 },
 
 "click #btnMulti": function(){
@@ -264,6 +257,8 @@ Template.buttons.events({
 
 "click #btnToBin":function(){
   Session.set("result",toBinaryFunction(Session.get("result")));
+  var result = Session.get("result");
+  historie.insert({Result: result, number: counter});
 },
 
 "click #btnEqual": function(){
