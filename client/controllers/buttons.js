@@ -6,7 +6,13 @@ Session.set("modPushed", false);
 Session.set("powerPushed",false);
 Session.set("sqrPushed",false); //do we need this??
 Session.set("equalPushed",false);
-counter = 0;
+
+
+getTimeFunction = function(){
+  date = new Date();
+  counter = date.getTime();
+  return counter;
+};
 
 blankAllFunction = function(){
   Session.set("temp1","");
@@ -16,7 +22,7 @@ blankAllFunction = function(){
   Session.set("divPushed",false);
   Session.set("modPushed",false);
   Session.set("powerPushed",false);
-  Session.set("sqrPushed",false); //do we need this??
+  //Session.set("sqrPushed",false); //do we need this??
 };
 
 addFunction = function(temp1,temp2){
@@ -79,10 +85,12 @@ toBinaryFunction = function(temp1){
 };
 
 function checkEqual(){
-  if(Session.get("equalPushed"))
+  if(Session.get("equalPushed") || Session.get("binPushed") || Session.get("sqrPushed"))
   {
     Session.set("result", "");
     Session.set("equalPushed", false);
+    Session.set("binPushed", false);
+    Session.set("sqrPushed", false);
   }
 }
 
@@ -107,7 +115,7 @@ function checkEqual(){
     "btnDiv" : function() {return Session.get("btnDiv");},
     "btnPower": function(){return Session.get("btnPower");},
     "btnSqr": function(){return Session.get("btnSqr");},
-    "btnBlank" : function() {return Session.get("btnBlank");},
+    //"btnBlank" : function() {return Session.get("btnBlank");},
   });
 
   Template.buttons.events({
@@ -189,7 +197,7 @@ Template.buttons.events({
 "click #btnSqr":function(){
   Session.set("result", sqrFunction(Session.get("result")));
   var result = Session.get("result");
-  historie.insert({Result: result, number: counter});
+  historie.insert({Result: result, number: getTimeFunction()});
 },
 
 "click #btnMulti": function(){
@@ -258,13 +266,12 @@ Template.buttons.events({
 "click #btnToBin":function(){
   Session.set("result",toBinaryFunction(Session.get("result")));
   var result = Session.get("result");
-  historie.insert({Result: result, number: counter});
+  historie.insert({Result: result, number: getTimeFunction()});
 },
 
 "click #btnEqual": function(){
 
   Session.set("equalPushed",true);
-  counter += 1;
 
   if(Session.get("addPushed"))
   {
@@ -297,7 +304,7 @@ Template.buttons.events({
     blankAllFunction();
   }
   else {
-    alert("test");
+    alert("Please write a digit");
   }
 
 }
@@ -308,7 +315,7 @@ Template.buttons.events({
   "click #btnEqual": function(){
     var result = Session.get("result");
     console.log(result);
-     historie.insert({Result: result, number: counter});
+     historie.insert({Result: result, number: getTimeFunction()});
      console.log("satt inn i database?");
   }
 });

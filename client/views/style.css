@@ -1,12 +1,30 @@
+body{
+  background-color: #424B5D;
+}
+
+.container{
+  margin-top:3%;
+}
+
+.navbar-inverse .navbar-nav > li > a,.navbar-inverse .navbar-brand{
+  color:#98C379;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar{
+  background-color:#98C379;
+}
+
+
 #colDisplay{
-    height: 100px;
+    height: 90px;
     font-size: 3em;
     text-align: right;
-    padding-top: 1%;
+    padding-top: 2%;
     background-color: #282C34;
-    color: #98C379;
+    color: #2bda77;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    float: none; margin: 0 auto;
 }
 
 
@@ -14,10 +32,13 @@
     border:solid #282C34 8px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    background-color: #E1E6E2;
+    background-color:#565F6F; /*#E1E6E2*/
     padding-top: 3%;
     padding-bottom: 3%;
-    padding-left: 12%;
+    /*padding-left: 12%;*/
+    float: none; margin: 0 auto;
+     min-height:310px;
+  /*height:300px;*/
 
     /*padding: 5%;*/
 }
@@ -35,10 +56,11 @@
 
 }
 #btnOn{
-  background-color: #98C379;
+  background-color: #2bda77;
+  /*border: inset;*/
 }
 #btnDel{
-  background-color: #E06C75;
+  background-color: #E62929;
 }
 
 #functionButtons{
@@ -61,7 +83,7 @@
 
 .modal-body{
   background-color: #E1E6E2;;
-  color:#98C379;
+  color:#282C34;
 }
 
 #calcHistory{

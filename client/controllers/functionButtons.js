@@ -5,7 +5,7 @@
 
     Template.functionButtons.helpers({
         "btnDel" : function(){return Session.get("btnDel");},
-        "btnHistory" : function(){return Session.get("btnHistory");},
+        //"btnHistory" : function(){return Session.get("btnHistory");},
         "btnOn" : function(){return Session.get("btnOn");}
     });
 
