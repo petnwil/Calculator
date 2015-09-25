@@ -20,3 +20,12 @@
   Session.set("btnToBin","btn-default");
   Session.set("result","");
   Session.set("tempAdd","");
+  Session.set("addPushed",false);
+  Session.set("subPushed",false);
+  Session.set("multiPushed", false);
+  Session.set("divPushed", false);
+  Session.set("modPushed", false);
+  Session.set("powerPushed",false);
+  Session.set("sqrPushed",false);
+  Session.set("binPushed",false);
+  Session.set("equalPushed",false);
