@@ -326,7 +326,7 @@ Template.buttons.events({
     blankAllFunction();
   }
   else {
-    alert("Please write a digit");
+    alert("Please fill in a minimum of one digit, followed by an operator and a new digit");
   }
 
 }
@@ -337,7 +337,15 @@ Template.buttons.events({
   "click #btnEqual": function(){
     var result = Session.get("result");
     console.log(result);
-     calculations.insert({Result: result, number: getTimeFunction()});
-     console.log("Added to database?");
+    if(result === "")
+    {
+      return;
+    }
+    else
+    {
+      calculations.insert({Result: result, number: getTimeFunction()});
+      console.log("Added to database?");
+    }
+
   }
 });
