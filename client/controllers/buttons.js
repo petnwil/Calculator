@@ -5,6 +5,7 @@ Session.set("divPushed", false);
 Session.set("modPushed", false);
 Session.set("powerPushed",false);
 Session.set("sqrPushed",false); //do we need this??
+Session.set("binPushed",false);
 Session.set("equalPushed",false);
 
 
@@ -22,7 +23,8 @@ blankAllFunction = function(){
   Session.set("divPushed",false);
   Session.set("modPushed",false);
   Session.set("powerPushed",false);
-  //Session.set("sqrPushed",false); //do we need this??
+  Session.set("sqrPushed",false);
+  Session.set("binPushed",false);
 };
 
 addFunction = function(temp1,temp2){
@@ -213,6 +215,7 @@ Template.buttons.events({
 },
 
 "click #btnSqr":function(){
+  Session.set("sqrPushed",true);
   Session.set("result", sqrFunction(Session.get("result")));
   var result = Session.get("result");
   calculations.insert({Result: result, number: getTimeFunction()});
@@ -283,6 +286,7 @@ Template.buttons.events({
 
 "click #btnToBin":function(){
   Session.set("result",toBinaryFunction(Session.get("result")));
+  Session.set("binPushed",true);
   var result = Session.get("result");
   calculations.insert({Result: result, number: getTimeFunction()});
 },
