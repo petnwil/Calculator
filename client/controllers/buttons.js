@@ -87,10 +87,18 @@ toBinaryFunction = function(temp1){
 function checkEqual(){
   if(Session.get("equalPushed") || Session.get("binPushed") || Session.get("sqrPushed"))
   {
-    Session.set("result", "");
-    Session.set("equalPushed", false);
-    Session.set("binPushed", false);
-    Session.set("sqrPushed", false);
+    if(Session.get("subPushed"))
+    {
+      return;
+    }
+    else
+    {
+      Session.set("result", "");
+      Session.set("equalPushed", false);
+      Session.set("binPushed", false);
+      Session.set("sqrPushed", false);
+    }
+
   }
 }
 
@@ -120,37 +128,48 @@ function checkEqual(){
 
   Template.buttons.events({
 
-    "click #btn9": function(){ checkEqual();
+    "click #btn9": function(){
+      checkEqual();
       Session.set("result",Session.get("result") + "9"); },
 
-    "click #btn8": function(){ checkEqual();
+    "click #btn8": function(){
+      checkEqual();
       Session.set("result",Session.get("result") + "8"); },
 
-   "click #btn7": function(){ checkEqual();
+   "click #btn7": function(){
+     checkEqual();
       Session.set("result",Session.get("result") + "7"); },
 
-    "click #btn6": function(){ checkEqual();
+    "click #btn6": function(){
+      checkEqual();
       Session.set("result",Session.get("result") + "6"); },
 
-     "click #btn5": function(){ checkEqual();
+     "click #btn5": function(){
+       checkEqual();
       Session.set("result",Session.get("result") + "5"); },
 
-     "click #btn4": function(){ checkEqual();
+     "click #btn4": function(){
+      checkEqual();
       Session.set("result",Session.get("result") + "4"); },
 
-     "click #btn3": function(){ checkEqual();
+     "click #btn3": function(){
+      checkEqual();
       Session.set("result",Session.get("result") + "3"); },
 
-     "click #btn2": function(){ checkEqual();
+     "click #btn2": function(){
+      checkEqual();
       Session.set("result",Session.get("result") + "2"); },
 
-     "click #btn1": function(){ checkEqual();
+     "click #btn1": function(){
+      checkEqual();
       Session.set("result",Session.get("result") + "1"); },
 
-     "click #btn0": function(){ checkEqual();
+     "click #btn0": function(){
+      checkEqual();
       Session.set("result",Session.get("result") + "0"); },
 
-     "click #btnCom": function(){ checkEqual();
+     "click #btnCom": function(){
+      checkEqual();
       Session.set("result",Session.get("result") + "."); },
 
   }); // end of events
