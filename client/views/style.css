@@ -86,10 +86,15 @@ body{
   color:#282C34;
 }
 
-#calcHistory{
+.img-circle{
+  width: 150px;
+  height: 150px;
+}
+
+/*#calcHistory{
   color: black;
 }
 
 #mid{
   text-align: center;
-}
+}*/
