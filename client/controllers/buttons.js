@@ -197,7 +197,7 @@ Template.buttons.events({
 "click #btnSqr":function(){
   Session.set("result", sqrFunction(Session.get("result")));
   var result = Session.get("result");
-  historie.insert({Result: result, number: getTimeFunction()});
+  calculations.insert({Result: result, number: getTimeFunction()});
 },
 
 "click #btnMulti": function(){
@@ -266,7 +266,7 @@ Template.buttons.events({
 "click #btnToBin":function(){
   Session.set("result",toBinaryFunction(Session.get("result")));
   var result = Session.get("result");
-  historie.insert({Result: result, number: getTimeFunction()});
+  calculations.insert({Result: result, number: getTimeFunction()});
 },
 
 "click #btnEqual": function(){
@@ -315,7 +315,7 @@ Template.buttons.events({
   "click #btnEqual": function(){
     var result = Session.get("result");
     console.log(result);
-     historie.insert({Result: result, number: getTimeFunction()});
-     console.log("satt inn i database?");
+     calculations.insert({Result: result, number: getTimeFunction()});
+     console.log("Added to database?");
   }
 });
