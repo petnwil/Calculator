@@ -20,6 +20,9 @@
   Session.set("btnToBin","btn-default");
   Session.set("result","");
   Session.set("tempAdd","");
+  Session.set("btnDel", "btn-default");
+  Session.set("btnHistory", "btn-default");
+  Session.set("btnOn", "btn-default");
   Session.set("addPushed",false);
   Session.set("subPushed",false);
   Session.set("multiPushed", false);
