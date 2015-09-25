@@ -89,12 +89,9 @@ body{
 .img-circle{
   width: 150px;
   height: 150px;
-}
 
-/*#calcHistory{
-  color: black;
 }
+.aboutColumn{
+  float: none; margin: 0 auto;
 
-#mid{
-  text-align: center;
-}*/
+}

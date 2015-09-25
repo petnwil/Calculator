@@ -98,8 +98,7 @@ function checkEqual(){
       Session.set("binPushed", false);
       Session.set("sqrPushed", false);
     }
-
-  }
+}
 }
 
 
