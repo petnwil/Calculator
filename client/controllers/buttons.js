@@ -218,7 +218,8 @@ function checkEqual(){
 
     },
 
-    "click #btnSqr":function(){
+    "click #btnSqr":function()
+    {
       Session.set("sqrPushed",true);
       Session.set("result", sqrFunction(Session.get("result")));
       var result = Session.get("result");
@@ -227,13 +228,15 @@ function checkEqual(){
 
     "click #btnMulti": function(){
 
-      if(Session.get("multiPushed")){
+      if(Session.get("multiPushed"))
+      {
         Session.set("temp1", multiplyFunction(Session.get("temp1"), Session.get("result")));
         Session.set("result", "");
         Session.set("multiPushed", true);
         console.log("temp1 funksjonen: " + Session.get("temp1"));
         return;
       }
+
       Session.set("temp1", Session.get("result"));
       Session.set("multiPushed", true);
       Session.set("result", "");
