@@ -5,7 +5,6 @@ getTimeFunction = function(){
   return counter;
 };
 
-
 //Function to blank all booleans and temp-variable when equalbutton is pressed
 blankAllFunction = function(){
   Session.set("temp1","");
@@ -22,22 +21,16 @@ blankAllFunction = function(){
 //Function for adding to numbers
 addFunction = function(temp1,temp2){
   temp1 = parseFloat(temp1);
-  console.log(temp1 + " temp1 i add");
   temp2 = parseFloat(temp2);
-  console.log(temp2 + " temp2 i add");
   temp1 = (temp1 + temp2);
-  console.log(temp1 + " temp1 i add total");
   return temp1.toFixed(2);
 };
 
 //Function for subtracting to numbers
 subFunction = function(temp1,temp2){
   temp1 = parseFloat(temp1);
-  console.log(temp1 + " temp1 i sub");
   temp2 = parseFloat(temp2);
-  console.log(temp2 + " temp2 i sub");
   temp1 = (temp1-temp2);
-  console.log(temp1 + "temp1 i sub total");
   return temp1.toFixed(2);
 };
 
@@ -83,7 +76,7 @@ sqrFunction = function(temp1){
 //Function for converting a decimal to binary
 toBinaryFunction = function(temp1){
   temp1 = parseInt(temp1);
-  return temp1.toString(2); //2 is the radix, the base of the input
+  return temp1.toString(2); //2 is the radix, the base of the input.
 };
 
 
@@ -233,14 +226,12 @@ function checkEqual(){
         Session.set("temp1", multiplyFunction(Session.get("temp1"), Session.get("result")));
         Session.set("result", "");
         Session.set("multiPushed", true);
-        console.log("temp1 funksjonen: " + Session.get("temp1"));
         return;
       }
 
       Session.set("temp1", Session.get("result"));
       Session.set("multiPushed", true);
       Session.set("result", "");
-      console.log("temp1: " + Session.get("temp1"));
     },
 
     "click #btnMod":function(){
@@ -265,13 +256,11 @@ function checkEqual(){
         Session.set("temp1", dividFunction(Session.get("temp1"), Session.get("result")));
         Session.set("result", "");
         Session.set("divPushed", true);
-        console.log("temp1 divison: " + Session.get("temp1"));
         return;
       }
       Session.set("temp1", Session.get("result"));
       Session.set("divPushed", true);
       Session.set("result", "");
-      console.log("temp1: " + Session.get("temp1"));
     },
 
     "click #btnPower": function(){
@@ -281,7 +270,6 @@ function checkEqual(){
         Session.set("temp1", powerofFunction(Session.get("temp1"), Session.get("result")));
         Session.set("result","");
         Session.set("powerPushed",true);
-        console.log("temp1 i power etter utregning: " + Session.get("temp1"));
         return;
       }
 
@@ -342,7 +330,6 @@ function checkEqual(){
   Template.buttons.events({
     "click #btnEqual": function(){
       var result = Session.get("result");
-      console.log(result);
       if(result === "")
       {
         return;
@@ -350,7 +337,6 @@ function checkEqual(){
       else
       {
         calculations.insert({Result: result, number: getTimeFunction()});
-        console.log("Added to database?");
       }
 
     }
