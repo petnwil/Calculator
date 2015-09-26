@@ -276,7 +276,6 @@ function checkEqual(){
       Session.set("temp1", Session.get("result"));
       Session.set("powerPushed",true);
       Session.set("result","");
-      console.log("temp1 i power: " + Session.get("temp1"));
     },
 
     "click #btnToBin":function(){
