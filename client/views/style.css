@@ -1,0 +1,94 @@
+body{
+  background-color: #424B5D;
+}
+
+.container{
+  margin-top:3%;
+}
+
+.navbar-inverse .navbar-nav > li > a,.navbar-inverse .navbar-brand{
+  color:#98C379;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar{
+  background-color:#98C379;
+}
+
+#colDisplay{
+    height: 90px;
+    font-size: 3em;
+    text-align: right;
+    padding-top: 2%;
+    background-color: #282C34;
+    color: #2bda77;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    float: none; margin: 0 auto;
+}
+
+.rowButtons{
+    border:solid #282C34 8px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color:#565F6F; /*#E1E6E2*/
+    padding-top: 3%;
+    padding-bottom: 3%;
+    float: none;
+    margin: 0 auto;
+    min-height:310px;
+}
+
+#btn9,#btn8,#btn7,#btn6,#btn5,#btn4,#btn3,#btn2,#btn1,#btn0,
+#btnDiv,#btnMulti,#btnSub,#btnCom,#btnEqual,#btnAdd,#btnBlank, #btnMod,
+#btnPower, #btnSqr, #btnToBin{
+  margin: 1px;
+  background-color: #282C34;
+  color: #98C379;
+  width: 20%;
+  height: 20%;
+  font-size: 15px;
+  box-shadow: 3px 3px 1px #888888;
+}
+
+#btnOn{
+  background-color: #2bda77;
+}
+
+#btnDel{
+  background-color: #E62929;
+}
+
+#btnOn,#btnDel{
+  width: 100px;
+  margin-bottom: 20px;
+  color: #282C34;
+  font-size: 1.2em;
+  font-weight: bold;
+  border: solid black 1px;
+  box-shadow: 3px 3px 1px #888888;
+}
+
+#functionButtons{
+  margin-top: 10px;
+}
+
+.modal-header{
+  background-color: #282C34 ;
+  color:#98C379;
+}
+
+.modal-body{
+  background-color: #E1E6E2;;
+  color:#282C34;
+}
+
+.img-circle{
+  width: 150px;
+  height: 150px;
+
+}
+
+.aboutColumn{
+  float: none;
+  margin: 0 auto;
+}

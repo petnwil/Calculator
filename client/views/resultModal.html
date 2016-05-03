@@ -1,0 +1,19 @@
+<template name="resultModal">
+
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"> &times;</button>
+        <h3 class="modal-title"> 10 last calculations </h3>
+      </div>
+      <div class="modal-body">
+          <ol>
+            {{#each calculations}}
+              <li>{{Result}}</li>
+            {{/each}}
+          </ol>
+      </div>
+    </div>
+  </div>
+
+</template>
